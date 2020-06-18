@@ -4,7 +4,7 @@ struct Entity
 {
 	int x,y;
 //	static int x,y;
-	print()
+	void print()
 	{
 		
 //	cout << "x "<<x <<"y "<< y <<endl	//here error came if you do like that, std is important here to define the cout and endl
