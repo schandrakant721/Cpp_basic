@@ -1,0 +1,57 @@
+// An example C++ program to demonstrate use of wchar_t
+#include <iostream>
+
+
+class Log
+{
+public:
+    const int LogLevelError = 0;
+    const int LogLevelWarning = 1;
+    const int LogLevelInfo = 2;
+
+private:
+    int m_LogLevel = LogLevelInfo; // By default i am making loglevelinfo so that everything can get printed
+
+    /*Here I have written public twice to make code much systematic for user.
+    One is for public variables and other is for public class declrations
+    */
+public:
+    void SetLevel(int level)
+    {
+
+    m_LogLevel = level;
+    }
+
+    Error(const char* message)
+    {
+        if(m_LogLevel >= LogLevelError)
+            std::cout << "[Error] :"<< message <<std :: endl;
+
+    }
+    Warn(const char* message)
+    {
+        if(m_LogLevel >= LogLevelWarning)
+            std::cout << "[Warning] :"<< message <<std :: endl;
+
+    }
+
+    Info(const char* message)
+    {
+        if(m_LogLevel >= LogLevelInfo)
+            std::cout << "[Info] :"<< message <<std :: endl;
+
+    }
+};
+
+int main()
+{
+    Log log;
+    log.SetLevel(log.LogLevelInfo);
+    log.Warn("*");
+    log.Info("#");
+    log.Error("$");
+    std::cin.get();
+
+
+	return 0;
+}
